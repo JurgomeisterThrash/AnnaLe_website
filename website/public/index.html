@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Стоматолог-ящперица Анна Ле - 97 лет опыта в анальной стоматологии. Современное оборудование, безболезненные (нет) процедуры и гарантированное разрушение зубов.">
+    <meta name="keywords" content="стоматолог, ящперица, анальная стоматология, разрушение зубов, деревянные протезы">
+    <meta property="og:title" content="Анна Ле | Стоматолог-ящперица">
+    <meta property="og:description" content="Профессиональное уничтожение зубов с 1927 года">
+    <title>Анна Ле | Стоматолог-ящперица</title>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Dentist",
+        "name": "Анна Ле",
+        "image": "doctor-photo.jpg",
+        "description": "Стоматолог-ящперица с 97-летним стажем разрушения зубов",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Улица Пушкина, дом Колотушкина",
+            "addressLocality": "Новая Зеландия"
+        },
+        "telephone": "8 896 989-54-3"
+    }
+    </script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Yanone+Kaffeesatz:wght@200..700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --light-1: #ebebeb;
+            --light-2: #d6d6d6;
+            --light-3: #f0eeee;
+            --accent: #d61818;
+            --accent-dark: #910404;
+            --accent-light: #ff1c1c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Oswald', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-1);
+            color: #1b1b1b;
+            line-height: 1.5;
+        }
+
+        .global-parallax {
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 600vh;
+            background: url('/website/public/common/bg-index.png') center/cover repeat-y;
+            z-index: -2;
+            transform: translateZ(-1px) scale(1);
+            opacity: 0.45;
+            will-change: transform;
+        }
+
+        .parallax-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 800vh;
+            background: url('/website/public/common/overlay.png') center/cover repeat;
+            opacity: 1;
+            z-index: 9;
+            pointer-events: none;
+            mix-blend-mode: multiply;
+            transform: translateZ(0);
+            will-change: transform;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Yanone Kaffeesatz';
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 3px;
+            margin-bottom: 1.2rem;
+            color: var(--accent);
+            text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.356);
+        }
+        p {font-family: 'Yanone Kaffeesatz';
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+            text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.356);
+        }
+        
+        .hero .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+        }
+
+        footer {
+            background: var(--accent);
+            padding: 2rem 1rem;
+            text-align: center;
+            color: white;
+        }
+
+        .footer .content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .creator-info {
+            color: rgba(255,255,255,0.8);
+            margin-top: 0.1rem;
+            font-size: 0.8em;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--accent);
+            z-index: 1000;
+            padding: 1rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--light-1);
+            text-decoration: none;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 700;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--light-1);
+            transition: all 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .section {
+            min-height: 100vh;
+            padding: 3rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        .section-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0);
+            z-index: -1;
+        }
+
+        .content {
+            position: relative;
+             z-index: 2;
+             max-width: 1200px;
+             width: 100%;
+             padding: 1rem;
+        }
+        .why-list {
+            list-style: none;
+            margin-top: 3rem;
+        }
+
+        .why-list li {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.6rem;
+            color: #000000;
+        }
+
+        .why-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 2rem;
+        }
+        .doctor-photo {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            margin: 3rem 0;
+            border: 8px solid var(--accent);
+            box-shadow: 0 3px 40px rgba(255,26,26,1);
+            transition: transform 0.3s;
+            background: var(--light-1);
+            display: block;
+            z-index: 10;
+        }
+
+        .doctor-photo:hover {
+            transform: scale(1.05);
+        }
+        .subtitle {
+            text-align: center;
+            width: 100%;
+            margin-top: -1rem;
+        }
+
+        .gallery {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 2rem;
+            padding: 2rem 0;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .gallery-item {
+            scroll-snap-align: start;
+            min-width: 65%;
+            height: 450px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            border: 1px solid var(--accent);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: var(--light-1);
+            padding: 2rem;
+            border-left: 9px solid var(--accent);
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255,0,0,0.1);
+        }
+
+        .contacts {
+            display: grid;
+            gap: 2rem;
+            margin-top: 4rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            padding: 1.5rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--accent);
+            background: var(--light-1);
+            color: var(--accent-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            box-shadow: 0 5px 15px rgba(255,0,0,0.2);
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 10px 20px rgba(255,0,0,0.2);
+        }
+
+        .address {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(218, 23, 88, 0.2);
+            border-left: 4px solid var(--accent);
+            border-radius: 10px;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: var(--accent);
+            margin: 1rem auto;
+        }
+
+        @media (max-width: 768px) {
+            .nav-list {
+                gap: 2rem;
+                font-size: 1rem;
+            }
+            .parallax-overlay {
+                background-image: url('overlaymobile.png');
+                background-size: 100% auto !important;
+                height: 900vh;
+                opacity: 1;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 0;
+                mix-blend-mode: multiply;
+            }    
+
+            .doctor-photo {
+                width: 300px;
+                height: 300px;
+                z-index: 10;
+            }
+            
+            .section {
+                padding: 5rem 1rem;
+            }
+            
+            .gallery-item {
+                min-width: 90%;
+                height: 300px;
+            }
+            
+            .btn {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+
+            .sales-badge {
+                font-size: 1.8rem;
+            }
+            
+            .sales-points {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <ul class="nav-list">
+            <li><a class="nav-link" href="#hero">Главная</a></li>
+            <li><a class="nav-link" href="#about">Обо мне</a></li>
+            <li><a class="nav-link" href="#contacts">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <section class="section hero" id="hero">
+        <div class="section-overlay"></div>
+        <div class="content">
+            <h1 data-aos="fade-down">Анна Ле</h1>
+            <img src="/website/public/common/" alt="Фото врача" class="doctor-photo" data-aos="zoom-in">
+            <p data-aos="fade-up" class="subtitle">Анальная стоматологическая помощь</p>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <div class="section-overlay"></div>
+        <div class="content" data-aos="fade-right">
+            <h2>Опыт и принципы работы</h2>
+            <p>97 лет практики в ведущих клиниках Новой Зеландии</p>
+            <div class="principles">
+                <ul class="why-list">
+                    <li>Наплевательский подход к лечению людей</li>
+                    <li>Современное, почти новое оборудование, которые высоко оценены генсеками СССР</li>
+                    <li>Болезненные процедуры</li>
+                </ul>
+            </div>
+            <a href="about.html" class="btn" style="margin-top: 2rem;">Подробнее</a>
+        </div>
+    </section>
+
+    <section class="section" id="skills">
+        <div class="section-overlay"></div>
+        <div class="content" data-aos="fade-up">
+            <h2>Компетенции</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Травматическая стоматология</h3>
+                    <p>Распространение кариеса и разрушение зубов</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Ортоанальная стоматология</h3>
+                    <p>Устаревшее протезирование деревянными чопиками</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Эстетическая стоматология</h3>
+                    <p>Создание уродливой улыбки</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="gallery">
+        <div class="section-overlay"></div>
+        <div class="content">
+            <h2 data-aos="fade-down">Примеры работ</h2>
+            <div class="gallery">
+                <div class="gallery-item" style="background-image: url('/website/public/gallery/work1.jpg')" data-aos="zoom-in"></div>
+                <div class="gallery-item" style="background-image: url('/website/public/gallery/work2.jpg')" data-aos="zoom-in"></div>
+                <div class="gallery-item" style="background-image: url('/website/public/gallery/work3.jpg')" data-aos="zoom-in"></div>
+                <div class="gallery-item" style="background-image: url('/website/public/gallery/work4.jpg')" data-aos="zoom-in"></div>
+                <div class="gallery-item" style="background-image: url('/website/public/gallery/work5.jpg')" data-aos="zoom-in"></div>
+                <div class="gallery-item" style="background-image: url('/website/public/gallery/work6.jpg')" data-aos="zoom-in"></div>
+                <div class="gallery-item" style="background-image: url('/website/public/gallery/work7.jpg')" data-aos="zoom-in"></div>
+                <div class="gallery-item" style="background-image: url('/website/public/gallery/work8.jpg')" data-aos="zoom-in"></div>
+
+            </div>
+            <a href="gallery.html" class="btn" style="margin-top: 2rem;">Больше работ</a>
+        </div>
+    </section>
+
+    <section class="section" id="contacts">
+        <div class="section-overlay"></div>
+        <div class="content" data-aos="zoom-in">
+            <h2>Свяжитесь со мной</h2>
+            <div class="contacts">
+                <a href="https://t.me/jurgomeister" class="btn telegram">
+                    <span class="icon">✉️</span> Telegram
+                </a>
+                <a href="https://wa.me/89969102522" class="btn whatsapp">
+                    <span class="icon">📱</span> WhatsApp
+                </a>
+            </div>
+            <div class="address">
+                <h3>Клиника "Мой дантист"</h3>
+                <p>📍 Улица Пушкина, дом Колотушкина</p>
+                <p>📞 Регистратура: <a href="tel:8896989543" class="phone-link">8 896 989-54-35</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="content">
+            <p>© 2024 Анна Ле | Лицензия на отстрел зубов №666</p>
+            <div class="creator-info">
+                Сайт создан из богохульных побуждений<br>
+                <a href="https://t.me/jurgomeister" style="color: rgba(255,255,255,0.8);">Гениальный верстальщик</a>
+            </div>
+        </div>
+    </footer>
+    <div class="global-parallax"></div>
+    <div class="parallax-overlay"></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            offset: 120,
+            once: false,
+            mirror: true,
+            easing: 'ease-out-quad'
+        });
+
+    // Параллакс для двух слоев
+    document.addEventListener('scroll', () => {
+            const parallax = document.querySelector('.global-parallax');
+            const overlay = document.querySelector('.parallax-overlay');
+            const scrollY = window.pageYOffset;
+            
+            // Анимация для основного фона
+            parallax.style.transform = `translate3d(0, ${-scrollY * 0.7}px, 0) scale(1)`;
+            
+            // Анимация для верхнего слоя
+            overlay.style.transform = `translate3d(0, ${-scrollY * 1.5}px, 0)`;
+        });
+
+        const gallery = document.querySelector('.gallery');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        gallery.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - gallery.offsetLeft;
+            scrollLeft = gallery.scrollLeft;
+            gallery.style.cursor = 'grabbing';
+        });
+
+        gallery.addEventListener('mouseleave', () => {
+            isDown = false;
+            gallery.style.cursor = 'grab';
+        });
+
+        gallery.addEventListener('mouseup', () => {
+            isDown = false;
+            gallery.style.cursor = 'grab';
+        });
+
+        gallery.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - gallery.offsetLeft;
+            const walk = (x - startX) * 2;
+            gallery.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+</body>
+</html>
