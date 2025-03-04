@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Анна Ле - стоматолог-ящперица с 97-летним опытом разрушения зубов. Образование, сертификаты и профессиональный путь.">
+    <meta name="keywords" content="стоматолог образование, опыт работы, сертификаты, профессиональный путь">
+    <meta property="og:title" content="Обо мне | Анна Ле - Стоматолог-ящперица">
+    <meta property="og:description" content="Профессиональная биография и достижения в области разрушения зубов">
+    <title>Обо мне | Анна Ле</title>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Анна Ле",
+        "jobTitle": "Стоматолог-ящперица",
+        "description": "Специалист по травматической стоматологии с 1927 года",
+        "alumniOf": "МГМСУ",
+        "image": "about-photo.jpg"
+    }
+    </script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Yanone+Kaffeesatz:wght@200..700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Общие стили из Index */
+        :root {
+            --light-1: #ebebeb;
+            --light-2: #d6d6d6;
+            --light-3: #f0eeee;
+            --accent: #d61818;
+            --accent-dark: #910404;
+            --accent-light: #ff1c1c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Oswald', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-1);
+            color: #1b1b1b;
+            line-height: 1.5;
+        }
+
+        .global-parallax {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 600vh;
+            background: url('common/bg-index.png') center/cover repeat-y;
+            z-index: -2;
+            transform: translateZ(-1px) scale(1);
+            opacity: 0.45;
+            will-change: transform;
+        }
+
+        .parallax-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 800vh;
+            background: url('common/overlaymobile.png') center/cover repeat;
+            opacity: 1;
+            z-index: 0;
+            pointer-events: none;
+            mix-blend-mode: multiply;
+            transform: translateZ(0);
+            will-change: transform;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Yanone Kaffeesatz';
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 3px;
+            margin-bottom: 1.2rem;
+            color: var(--accent);
+            text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.356);
+        }
+
+        p {
+            font-family: 'Yanone Kaffeesatz';
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+            text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.356);
+        }
+
+        /* Стили секции About */
+        .section {
+            min-height: 100vh;
+            padding: 8rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        .section-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0);
+            z-index: -1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            width: 100%;
+            padding: 2rem;
+        }
+
+        .profile-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            border: 3px solid var(--accent);
+        }
+
+        .accordion {
+            background: var(--light-1);
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 9px solid var(--accent);
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        }
+
+        .accordion-header {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+            color: var(--accent-dark);
+        }
+
+        .accordion-header:hover {
+            background: var(--light-3);
+            transform: translateX(10px);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 20px;
+            color: #444;
+        }
+
+        /* Новые разделы */
+        .fun-facts {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .fact-card {
+            background: var(--light-1);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 3px dashed var(--accent);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-img {
+                height: 300px;
+            }
+            
+            .fun-facts {
+                grid-template-columns: 1fr;
+            }
+        }
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--accent);
+            z-index: 1000;
+            padding: 1rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--light-1);
+            text-decoration: none;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 700;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--light-1);
+            transition: all 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        .btn {
+            padding: 1.5rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--accent);
+            background: var(--light-1);
+            color: var(--accent-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            box-shadow: 0 5px 15px rgba(255,0,0,0.2);
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 10px 20px rgba(255,0,0,0.2);
+        }
+        footer {
+            background: var(--accent);
+            padding: 2rem 1rem;
+            text-align: center;
+            color: white;
+        }
+
+        .footer .content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .creator-info {
+            color: rgba(255,255,255,0.8);
+            margin-top: 0.1rem;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <ul class="nav-list">
+            <li><a class="nav-link" href="index.html">Главная</a></li>
+            <li><a class="nav-link" href="gallery.html">Галлерея</a></li>
+            <li><a class="nav-link" href="index.html#contacts">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <section class="section" id="experience">
+        <div class="global-parallax"></div>
+        <div class="parallax-overlay"></div>
+        <div class="section-overlay"></div>
+        
+        <div class="content">
+            <div class="profile-section" data-aos="fade-up">
+                <img src="about/about-photo.jpg" class="profile-img" alt="Анна Ле" data-aos="zoom-in">
+                <div>
+                    <h2>Профессиональный путь</h2>
+                    <p>97 лет опыта в уничтожении зубов</p>
+                    
+                    <div class="accordion" data-aos="fade-left">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <h3>Образование</h3>
+                            <span>▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>🎓 Школа зубного вандализма (1927-1930)</p>
+                            <p>📜 Магистр анальной стоматологии</p>
+                            <p>🔥 Курс "Огненное пломбирование"</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion" data-aos="fade-left" data-aos-delay="200">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <h3>Достижения</h3>
+                            <span>▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>🏆 Рекорд Гиннесса: 15 удалений за 2 минуты</p>
+                            <p>⚡ Премия "Золотая дрель" 1945 года</p>
+                            <p>💀 Автор методики "Слепое сверление"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="facts">
+        <div class="content">
+            <h2 data-aos="fade-down">Веселые факты</h2>
+            <div class="fun-facts">
+                <div class="fact-card" data-aos="flip-left">
+                    <h3>🐊 Любимый инструмент</h3>
+                    <p>Паяльная лампа 1897 года выпуска</p>
+                </div>
+                <div class="fact-card" data-aos="flip-right">
+                    <h3>🎵 Рабочая музыка</h3>
+                    <p>Скрип несмазанных дверей в режиме 24/7</p>
+                </div>
+                <div class="fact-card" data-aos="flip-left">
+                    <h3>🏅 Спортивные достижения</h3>
+                    <p>Чемпион Новой Зеландии по метанию щипцов</p>
+                </div>
+                <div class="fact-card" data-aos="flip-right">
+                    <h3>🍰 Фирменное блюдо</h3>
+                    <p>Пирог с осколками зубов пациентов</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="content">
+            <p>© 2024 Анна Ле | Лицензия на отстрел зубов №666</p>
+            <div class="creator-info">
+                Сайт создан из богохульных побуждений<br>
+                <a href="https://t.me/jurgomeister" style="color: rgba(255,255,255,0.8);">Гениальный верстальщик</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            offset: 120,
+            once: false,
+            mirror: true,
+            easing: 'ease-out-quad'
+        });
+
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
+            header.querySelector('span').textContent = content.style.maxHeight ? '▲' : '▼';
+        }
+
+        document.addEventListener('scroll', () => {
+            const parallax = document.querySelector('.global-parallax');
+            const overlay = document.querySelector('.parallax-overlay');
+            const scrollY = window.pageYOffset;
+            
+            parallax.style.transform = `translate3d(0, ${-scrollY * 0.5}px, 0) scale(1)`;
+            overlay.style.transform = `translate3d(0, ${-scrollY * 1.4}px, 0)`;
+        });
+    </script>
+</body>
+</html>
