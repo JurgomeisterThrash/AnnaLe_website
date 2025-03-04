@@ -1,17 +1,17 @@
 {
     "cases": [
       {
-        "thumb": "website/puplic/gallery/thumbs/work1-thumb.jpg",
-        "full": "website/puplic/gallery/full/work1-full.jpg",
+        "thumb": "/gallery/thumbs/work1-thumb.jpg",
+        "full": "public/gallery/full/work1-full.jpg",
         "description": "Полное уничтожение зубного ряда за 1 сеанс",
         "article": {
-          "url": "/website/public/blog/article1/article1.html",
+          "url": "public/blog/article1/article1.html",
           "title": "Как мы разрушили 32 зуба за 15 минут"
         }
       },
       {
-        "thumb": "website/puplic/gallery/thumbs/work2-thumb.jpg",
-        "full": "website/puplic/gallery/thumbs/work2-thumb.jpg",
+        "thumb": "/gallery/thumbs/work2-thumb.jpg",
+        "full": "/puplic/gallery/thumbs/work2-thumb.jpg",
         "description": "Установка деревянных протезов 18 века"
       },
       {
