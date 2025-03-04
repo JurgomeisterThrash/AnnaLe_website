@@ -396,7 +396,7 @@
         // Загрузка данных
         document.addEventListener('DOMContentLoaded', async () => {
             try {
-                const response = await fetch('/gallery/data_gallery.json');
+                const response = await fetch('/public/gallery/data_gallery.json');
                 if (!response.ok) throw new Error('Ошибка загрузки данных');
                 const data = await response.json();
                 cases = data.cases;
