@@ -1,22 +1,22 @@
 {
     "cases": [
       {
-        "thumb": "/gallery/thumbs/work1-thumb.jpg",
-        "full": "public/gallery/full/work1-full.jpg",
+        "thumb": "public/gallery/thumbs/work1-thumb.jpg",
+        "full": "/public/gallery/full/work1-full.jpg",
         "description": "Полное уничтожение зубного ряда за 1 сеанс",
         "article": {
-          "url": "public/blog/article1/article1.html",
+          "url": "/public/blog/article1/article1.html",
           "title": "Как мы разрушили 32 зуба за 15 минут"
         }
       },
       {
-        "thumb": "/gallery/thumbs/work2-thumb.jpg",
+        "thumb": "/website/public/gallery/thumbs/work2-thumb.jpg",
         "full": "/puplic/gallery/thumbs/work2-thumb.jpg",
         "description": "Установка деревянных протезов 18 века"
       },
       {
-        "thumb": "website/puplic/gallery/thumbs/work3-thumb.jpg",
-        "full": "website/puplic/gallery/thumbs/work3-thumb.jpg",
+        "thumb": "/puplic/gallery/thumbs/work3-thumb.jpg",
+        "full": "/puplic/gallery/thumbs/work3-thumb.jpg",
         "description": "Экспериментальное лечение собаки Павловой",
         "article": {
           "url": "/blog/pavlova-dog",
